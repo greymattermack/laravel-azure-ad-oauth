@@ -1,5 +1,7 @@
 # Laravel Socialite Azure Active Directory Plugin
 
+**Made changes so it works with Management API rather then GRAPH
+
 ## Installation
 
 `composer require metrogistics/laravel-azure-ad-oauth`
