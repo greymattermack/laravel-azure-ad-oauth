@@ -49,16 +49,20 @@ class AzureOauthProvider extends AbstractProvider implements ProviderInterface
         }
 
         $response = $this->getAccessTokenResponse($this->getCode());
+        
+        return $response;
 
-        $user = $this->mapUserToObject($this->getUserByToken(
-            $token = Arr::get($response, 'access_token')
-        ));
+//         $user = $this->mapUserToObject($this->getUserByToken(
+//             $token = Arr::get($response, 'access_token')
+//         ));
+        
+        
 
-        $user->idToken = Arr::get($response, 'id_token');
-        $user->expiresAt = time() + Arr::get($response, 'expires_in');
+//         $user->idToken = Arr::get($response, 'id_token');
+//         $user->expiresAt = time() + Arr::get($response, 'expires_in');
 
-        return $user->setToken($token)
-                    ->setRefreshToken(Arr::get($response, 'refresh_token'));
+//         return $user->setToken($token)
+//                     ->setRefreshToken(Arr::get($response, 'refresh_token'));
     }
 
     protected function mapUserToObject(array $user)
